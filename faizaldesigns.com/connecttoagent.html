@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Connect To Agent</title>
+              <script src="webfont.min.js"></script>
+            <script>
+                                    WebFont.load({
+                                        google: {
+                                            "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+                                        },
+                                        active: function () {
+                                            sessionStorage.fonts = true;
+                                        }
+                                    });
+
+                                    var KTAppOptions = {
+                                        "colors": {
+                                            "state": {
+                                                "brand": "#5d78ff",
+                                                "dark": "#282a3c",
+                                                "light": "#ffffff",
+                                                "primary": "#5867dd",
+                                                "success": "#34bfa3",
+                                                "info": "#36a3f7",
+                                                "warning": "#ffb822",
+                                                "danger": "#fd3995"
+                                            },
+                                            "base": {
+                                                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                            }
+                                        }
+                                    };
+            </script>
+        <style>
+            body
+            {
+                font-family: 'Poppins';
+                font-style: normal;
+               background-color: #2a3948;
+            }
+        
+            label
+            {
+                color: #fff
+            }
+            .divBanner{
+                text-align: -webkit-center;
+            }
+            .center{
+                text-align: -webkit-center;
+    position: relative;
+    top: -72px;
+
+    width: 50%;
+    margin: auto;
+}
+            }
+            .divErrMsg{
+                text-align: -webkit-center;
+                margin-top: 15px;
+            }
+            .divContent{
+                text-align: -webkit-center;
+            }
+            .divLogin{
+                text-align: -webkit-center;
+                margin-top: 30px;
+                visibility: collapse;
+            }
+            .btnLogin{
+                width: 80px;
+                height: 30px;             
+                font-family: -webkit-body;
+                font-size: 16px;
+            }
+            .loginButton{
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+            .button {
+                background-color: #f17149;
+                border-color: #f17149;
+                color: white;
+                 height: 37px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                
+                           padding-left: 2.25rem;
+    padding-right: 2.25rem;
+
+                    border-radius: 2rem;
+
+            }
+            .call-Page{
+                    width: 100%;
+                    height: 480px;
+                    position: relative;
+                    margin: 0px auto;
+                    visibility: collapse;
+            }
+            .remoteVideo{
+                background: beige;
+                width: 100%;
+               height: 100%;
+              
+                left: 0px;
+                    
+            }
+            .localVideo{
+                
+                  width: 350px;
+    height: 250px;
+    margin: 0 auto;
+    top: 146px;
+    right: 9px;
+    position: fixed;
+    background: azure;
+    z-index: 999999;
+            }
+            .callToInput{
+                margin: 4px 7px;
+                height: 30px;
+                border-radius: 5px;
+                padding-left: 10px;
+            }
+            
+            
+                    
+           
+            
+         
+            
+       
+        </style>
+        <script src="js/common/default/webRTCConnectToAgent.js"></script>
+              <!-- <script src="testetst.js"></script> -->
+              
+              
+           
+           
+
+    </head>
+    <body>
+        <div class="divBanner">
+            <label> Connect To Agent </label>
+        </div>
+        <div class="divErrMsg">
+            <input type="text" id="remoteUser" style="visibility:collapse;"
+                   value=""/>
+            <input  type="text" id="localUser" style="visibility:collapse;"
+                value=""/>
+
+            <label id="msg"/>
+        </div>
+        <div class="divContent" id="callJoinDivId">
+            <input type="button" id="btnJoin" class="button" value="Join" onclick="join()"/>
+        </div>
+        <div id="callPage" class="call-Page">
+            <div>
+                <video id="localVideId" class="localVideo" autoplay></video>
+     
+                
+                
+          <video  class="remoteVideo" controls autoplay>
+      <source src="mov_bbb.mp4" type="video/mp4" >
+        Your browser does not support HTML5 video.
+    </video>
+                
+                
+                
+                
+                
+                
+                
+            </div>
+            <div class="center">
+                <input type="button" id="btnDisconnect" value="Disconnect" class="button" />
+            </div>
+        </div>
+       <script>
+              var cluster = "eastern";
+              var wss_url = "wss://10.100.103.63:9090";
+              var stun_server = "stun:stun2.1.google.com:19302";
+              var video_width = 1920;
+              var video_height = 1080;
+              var agent_name = document.getElementById('remoteUser').value;
+              var localVideo = document.getElementById('localVideId');
+              var remoteVideo = document.getElementById('remoteVideId');
+              var messageId = document.getElementById('msg');
+              //cluster, wssurl, local_video_id, remote_video_id, stun_server_url, vWidth, vHeight, message
+              var connToAgent = WebRTCConnectToAgent.getInstance(cluster, wss_url, localVideo, remoteVideo, stun_server, video_width, video_height, messageId);
+              //connToAgent.test();
+              function join(){
+                     alert("agent Name : "+ agent_name);
+                     document.getElementById('callPage').style.visibility="visible";
+                     document.getElementById('callJoinDivId').style.visibility="collapse";
+                     connToAgent.join(agent_name);
+
+                     //connToAgent.test();
+              }
+              //var obj = Test.getInstance();
+              //obj.test12();
+
+       </script>
+    </body>
+</html>

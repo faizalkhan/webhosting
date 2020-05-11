@@ -1,0 +1,26 @@
+#turn on url rewriting 
+RewriteEngine on
+
+
+#remove the need for .php extention 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
+
+
+#downlode
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet.* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetRight.* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*HTTrack.*$ [OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*MemoWeb.*$ [OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*FileHound.*$
+RewriteRule /* https://www.webbitech.com/ [R,L]
+
+
+#folder name change
+RewriteEngine On    
+RewriteRule   ^home/?$ index.php
+
+
+
