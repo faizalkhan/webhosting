@@ -1,0 +1,12 @@
+[17-Mar-2019 17:26:55 UTC] PHP Notice:  Undefined variable: headers in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 20
+[17-Mar-2019 17:39:19 UTC] PHP Notice:  Undefined variable: headers in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 18
+[17-Mar-2019 17:40:37 UTC] PHP Notice:  Undefined variable: headers in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 18
+[17-Mar-2019 17:40:54 UTC] PHP Notice:  Undefined index: name in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 2
+[17-Mar-2019 17:40:54 UTC] PHP Notice:  Undefined index: email in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 4
+[17-Mar-2019 17:40:54 UTC] PHP Notice:  Undefined index: message in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 6
+[17-Mar-2019 17:40:54 UTC] PHP Notice:  Undefined variable: headers in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 18
+[17-Mar-2019 17:48:48 UTC] PHP Notice:  Undefined variable: headers in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 18
+[18-Jan-2020 19:13:38 UTC] PHP Notice:  Undefined index: name in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 2
+[18-Jan-2020 19:13:38 UTC] PHP Notice:  Undefined index: email in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 4
+[18-Jan-2020 19:13:38 UTC] PHP Notice:  Undefined index: message in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 6
+[18-Jan-2020 19:13:38 UTC] PHP Notice:  Undefined variable: headers in /home/cre8tive/public_html/omcollars.info/contactform/contactform.php on line 18
