@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Fancy Docorators</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript">
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+</script>
+</head>
+<body>
+<!-- Begin Cover -->
+
+<div class="header" >
+  <div class="header_Ins"> <a href="index.html" class="logo"><span class="noshow">Fancy Docorators</span></a>
+    <div class="MemuArea" >
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="services.html">Services</a> </li>
+        <li><a href="gallery.html">Gallery</a> </li>
+        <li><a href="contactus.html" class="actvs">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End Cover --> 
+<!-- Begin BannerArea --> 
+
+<!-- End BannerArea -->
+
+<div class="Spliters">
+  <div id="wrapper">
+    <div class="CntWarpsIns"> 
+    <!-- Begin CntLeft -->
+    <div class="CntLeft">
+      <h1>Contact Us</h1>
+      <p>8/35 - E & F, Amman Complex,<br /> Near GD Weiler,<br /> Periyar Nagar<br />
+
+Vellalore Road,<br /> Podanur,<br /> Coimbatore - 641 023<br />
+</p>
+      <p><span>Website : </span> <a href="http://www.fancydecorators.com">www.fancydecorators.com</a></p>
+      <p><span>E-mail :</span> <a href="mailto:fancydecorators@gmail.com">fancydecorators@gmail.com</a></p>
+      <p><span>Call Us: </span> Podanur John : 9842294385 </p>
+       <p style="margin-left:62px">Jeeva : 9047522928 </p>
+    </div>
+    <!-- End CntLeft --> 
+    <!-- Begin CntRight -->
+    <div class="CntRight">
+
+      
+      
+      <form action="contactus.php" method="post" onsubmit="MM_validateForm('name','','R','email','','RisEmail','mobile','','RisNum');return document.MM_returnValue">
+       <h1>Enquiry Form</h1>
+      <label>Name</label>
+      <input type="text" id="name" class="inpts" name="name">
+       <label>Email</label>
+      <input type="text" id="email" class="inpts" name="email">
+      <label>Mobile</label>
+      <input type="text" id="mobile" class="inpts" name="mobile">
+      <label>Website</label>
+      <input type="text" class="inpts" name="website">
+      <label>Message</label>
+      <textarea class="TxtAre" rows="" cols="" name="message"></textarea>
+      
+      
+      <input type="submit" class="SubTs" value="Submit" name="submit">
+
+      
+      
+      </form>
+    </div>
+    <!-- End CntRight --> 
+  </div>
+  </div>
+</div>
+
+<div class="Spliters" style="border-top:4px solid #FEC414;">
+  <div id="wrapper">
+    <div class="CopyRts">
+      <ul>
+        <li><a href="index.html" class="actvs">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="services.html">Services</a> </li>
+        <li><a href="gallery.html">Gallery</a> </li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      <div class="Clrs"></div>
+      <p>Copyright &copy; 2014  All Rights Reserved.</p>
+    </div>
+    <div class="FooterCnts" >
+      <h1>Contact Us</h1>
+      <p>8/35 - E & F, Amman Complex, Near GD Weiler, Periyar Nagar<br />
+
+Vellalore Road, Podanur, Coimbatore - 641 023<br />
+Email : fancydecorators@gmail.com</p>
+      <ul id="SocialList">
+        <li> <a id="facebook" href="#" title="facebook" target="_blank"><span>facebook</span></a></li>
+        <li> <a id="twitter" href="#" title="twitter" target="_blank"><span>twitter</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
